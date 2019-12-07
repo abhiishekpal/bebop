@@ -1,0 +1,31 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_greet];
+5 [class="", fontsize=12, label=action_weather];
+"-11" [class=ellipsis, label="..."];
+"-12" [class=ellipsis, label="..."];
+11 [class=active, fontsize=12, label=utter_ask_location];
+12 [class=active, fontsize=12, label=action_weather];
+15 [class=active, fontsize=12, label=action_weather];
+16 [class="intent dashed active", label="  ?  ", shape=rect];
+17 [class=intent, fillcolor=lightblue, label="/greet", shape=rect, style=filled];
+18 [class=intent, fillcolor=lightblue, label="/inform{\"location\": \"dhaka\"}", shape=rect, style=filled];
+19 [class="intent active", fillcolor=lightblue, label="what is the current weather", shape=rect, style=filled];
+20 [class="intent active", fillcolor=lightblue, label=jammu, shape=rect, style=filled];
+21 [class="intent active", fillcolor=lightblue, label="what is the current weather in serbia", shape=rect, style=filled];
+0 -> 17  [class="", key=0];
+0 -> 18  [class="", key=0];
+0 -> 19  [class=active, key=0];
+1 -> "-12"  [class="", key=NONE, label=""];
+5 -> "-11"  [class="", key=NONE, label=""];
+11 -> 20  [class=active, key=0];
+12 -> "-1"  [class="", key=NONE, label=""];
+12 -> 21  [class=active, key=0];
+15 -> 16  [class=active, key=NONE, label=""];
+17 -> 1  [class="", key=0];
+18 -> 5  [class="", key=0];
+19 -> 11  [class=active, key=0];
+20 -> 12  [class=active, key=0];
+21 -> 15  [class=active, key=0];
+}
